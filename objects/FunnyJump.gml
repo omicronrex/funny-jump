@@ -17,7 +17,7 @@ if (load_funny_jump()) {
 
 play_bg_music("guyrock",1)
 
-global.playlist=1
+global.playlist=irandom(8)
 global.cursong=-1
 
 size=0
