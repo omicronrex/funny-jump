@@ -84,12 +84,12 @@ if (go && !done) {
         }
     }
 
-    if (timer>200+size*k && timer<=500+size*k) {
+    if (timer>200+size*k && timer<=400+size*k) {
         if (!instance_exists(BlockEffector)) {
             instance_create(0,0,BlockEffector)
             BlockEffector.alpha=0
         }
-        a=(timer-(200+size*k))/300
+        a=(timer-(200+size*k))/200
         with (PlayerKiller) {
             image_blend=merge_color(0,make_color_hsv((((x+y)*20+t)/50) mod 255,150,200),a)
         }
@@ -98,7 +98,7 @@ if (go && !done) {
             image_blend=a
         }
     }
-    if (timer>=500+size*k) {
+    if (timer>=400+size*k) {
         save_funny_jump()
         unlock_controls()
         done=1
