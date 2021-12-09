@@ -60,7 +60,6 @@ if (position=0) {
     }
 
     Player.visible=1
-    unlock_controls()
     instance_destroy()
 }
 #define Collision_PlayerKiller

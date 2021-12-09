@@ -100,6 +100,7 @@ if (go && !done) {
     }
     if (timer>=500+size*k) {
         save_funny_jump()
+        unlock_controls()
         done=1
     }
     timer+=1
