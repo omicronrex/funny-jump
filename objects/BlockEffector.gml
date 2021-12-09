@@ -5,7 +5,7 @@ action_id=603
 applies_to=self
 */
 alpha=1
-s=-1
+s=global.savemysurf3
 block1=global.savemysurf1
 block2=global.savemysurf2
 
@@ -31,6 +31,7 @@ applies_to=self
 */
 global.savemysurf1=block1
 global.savemysurf2=block2
+global.savemysurf3=s
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -69,6 +70,7 @@ s=surface_engage(s,800,608)
     draw_surface(block1,0,0)
     draw_set_blend_mode(0)
 surface_disengage()
+envelope_prepare()
 draw_surface_ext(s,0,0,1,1,0,col,1)
 
 s=surface_engage(s,800,608)
@@ -79,4 +81,5 @@ s=surface_engage(s,800,608)
     draw_surface(block2,0,0)
     draw_set_blend_mode(0)
 surface_disengage()
+envelope_prepare()
 draw_surface_ext(s,0,0,1,1,0,col,1)

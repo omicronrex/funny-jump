@@ -1,5 +1,6 @@
 global.savemysurf1=-1
 global.savemysurf2=-1
+global.savemysurf3=-1
 
 gameclosing=0
 closingvol=1
