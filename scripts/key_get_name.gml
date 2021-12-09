@@ -1,6 +1,6 @@
-///key_get_name(key):string
+///key_get_name(input id):string
 
-switch(argument0) {
+switch (global.keycode[argument0]) {
     //special keys
     case vk_space: return "Space";
     case vk_shift: return "Shift";
@@ -68,5 +68,5 @@ switch(argument0) {
     case 221: return "]";
     case 222: return "'";
     //other characters
-    default: return chr(argument0);
+    default: return chr(global.keycode[argument0]);
 }

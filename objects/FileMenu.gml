@@ -21,6 +21,7 @@ applies_to=self
 if ((keyboard_check_pressed(ord("Z")) && keyboard_check(vk_control)) || keyboard_check_pressed(vk_f5)) {
     sound_play("sndItem")
     savedata_read()
+    state=""
     exit
 }
 
@@ -171,11 +172,10 @@ draw_sprite(sprDynamicPlatform,0,dx-17,y+319)
 //option info
 draw_set_font(fntFileSmall)
 draw_set_halign(0)
-draw_text(34,global.height-52,"["+key_get_name(global.keycode[key_shoot])+"] "+lang("menuback"))
-draw_set_halign(2)
-draw_text(global.width-34,global.height-52,"["+key_get_name(global.keycode[key_jump ])+"] "+lang("menuaccept"))
+draw_text(34,global.height-52,"["+key_get_name(key_shoot)+"] "+lang("menuback"))
 draw_set_halign(1)
-draw_text(global.width/2,global.height-52,"["+key_get_name(global.keycode[key_menu ])+"] "+lang("menuoptions"))
+draw_text(global.width/2,global.height-52,"["+key_get_name(key_menu)+"] "+lang("menuoptions"))
+draw_set_halign(2)
+draw_text(global.width-34,global.height-52,"["+key_get_name(key_jump)+"] "+lang("menuaccept"))
 draw_set_halign(0)
-
 draw_set_color($ffffff)

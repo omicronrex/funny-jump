@@ -333,3 +333,7 @@ BlockEffector
 Runes
 SongNamer
 SupernovaFader
+CrushBlock
+HitCount
+HPMode
+VolCheck

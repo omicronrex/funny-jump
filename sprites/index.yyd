@@ -293,3 +293,6 @@ sprSupernova
 sprBrownBlock
 sprGrass
 sprRunes
+sprBlockCrush
+sprHitCount
+sprHPMode

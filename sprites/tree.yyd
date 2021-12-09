@@ -31,6 +31,8 @@
 	|sprCapButtons
 	|sprAeroArrow
 	|sprBackground
+	|sprHitCount
+	|sprHPMode
 +Cherries
 	+engine ver.
 		|sprCherryOld
@@ -75,6 +77,7 @@
 	|sprUpPlatform
 	|sprJumpThrough
 	|sprBlock
+	|sprBlockCrush
 	|sprSlipBlock
 	|sprNiseBlock
 	|sprMiniBlock

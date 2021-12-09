@@ -35,16 +35,13 @@ applies_to=self
 ///initialize variables
 //you usually don't need to touch any of these
 
-skin=global.player_skin
-weapon=global.player_weapon
-
 djump=1
 ladder=false
 onPlatform=false
 ladderjump=false
 hang=false
 
-oldslomo=slomo
+oldslomo=-1
 
 coyoteTime=0
 jump_timer=0
@@ -87,6 +84,9 @@ framefac=0
 afkk=0
 
 memplat=noone
+
+deathlist=0
+flashing=0
 
 input_h=0 input_v=0
 lrtype=settings("l+r behavior")
@@ -192,7 +192,7 @@ action_id=603
 applies_to=self
 */
 ///skin mask
-script_execute(skin,"mask")
+script_execute(global.player_skin,"mask")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -488,7 +488,7 @@ if (!place_free(x+hspeed,y+vspeed)) {
 
         repeat (a) {
             x+=s
-            if (!place_free(x,y)) {x-=s break}
+            if (!place_free(x,y)) {x-=s hspeed=0 break}
         }
         x-=hspeed
         walljumpboost=0
@@ -528,7 +528,7 @@ action_id=603
 applies_to=self
 */
 ///skin step
-script_execute(skin,"step")
+script_execute(global.player_skin,"step")
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=424
@@ -704,6 +704,7 @@ if (vflip==1) {
         if (other.snap || vspeed-other.vspeed>=0) {
             y=other.y-9
             vspeed=max(0,other.vspeed/dt/slomo)
+            check_crush()
         }
         vsplatform=max(0,other.vspeed)
         onPlatform=true
@@ -714,6 +715,7 @@ if (vflip==1) {
     if (y-vspeed/2>=other.bbox_bottom+1) {
         if (other.snap || vspeed-other.vspeed<=0) {
             y=other.bbox_bottom+1+8
+            check_crush()
             vspeed=min(0,other.vspeed/dt/slomo)
         }
         vsplatform=min(0,other.vspeed)
@@ -763,12 +765,19 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if (!is_ingame()) instance_destroy()
+if (!is_ingame()) {
+    sound_kind_pitch(1,1)
+    instance_destroy()
+}
 
 //fix sprite for first frame
-script_execute(skin,"step")
+script_execute(global.player_skin,"step")
 oldspr=sprite_index
 newspr=oldspr
+
+//debug stuff
+deathlist=0
+flashing=0
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -776,7 +785,21 @@ action_id=603
 applies_to=self
 */
 ///skin draw
-script_execute(skin,"draw")
+
+if (global.debug_god) {
+    i=1
+    repeat (deathlist[0]) {
+        draw_sprite_ext(mask_index,0,deathlist[i],deathlist[i+1],1,1,0,$ff,0.5)
+        i+=2
+    }
+}
+
+if (flashing) {
+    flashing-=1
+    if (flashing mod 5 > 2) exit
+}
+
+script_execute(global.player_skin,"draw")
 
 if (global.debug_god) draw_sprite_ext(sprBow,1,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
 if (global.debug_jump) draw_sprite_ext(sprBow,2,floor(bowx),floor(bowy+abs(lengthdir_y(2,sprite_angle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)

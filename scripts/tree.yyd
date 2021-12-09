@@ -40,16 +40,23 @@
 		|get_path_speed
 		|inside_view
 		|filename_valid
+		|current_date_filename
 	+input
+		+joysticks
+			|joy_deadzone
+			|joy_get_map
+			|joy_snap
+			|joy_compare
+			|joystick_default
 		|input_init
 		|input_default
 		|input_anykey
 		|input_update
 		|input_consume
 		|input_clear
-		|joystick_default
 		|lock_controls
 		|unlock_controls
+		|system_hotkeys
 	+rendering
 		|envelope_init
 		|envelope_prepare
@@ -102,6 +109,7 @@
 	|kill_player
 	|move_player
 	|flip_player
+	|emit_blood
 +bosses
 	|once_every
 	|BigCherry_boss
@@ -117,8 +125,10 @@
 	|camera_shake
 	|camera_apply
 +skins
+	|change_skin
 	|skin_default
 +weapons
+	|change_weapon
 	|weapon_default
 +sound
 	|play_bg_music

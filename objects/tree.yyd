@@ -18,6 +18,7 @@
 	|UnsolidItemBlock
 	|SolidItemBlock
 +User Interface
+	|VolCheck
 	|TitleMenu
 	|TitleParticle
 	|FileMenu
@@ -107,6 +108,7 @@
 	|PushBlockSave
 	|LiftBlock
 	|MoveBlock
+	|CrushBlock
 	|MiniBlock
 	|SlipBlock
 	|NiseBlock
@@ -206,6 +208,8 @@
 	|TextDraw
 	|WarpToHub
 	|SkyGradient2Colors
+	|HitCount
+	|HPMode
 |PlayerStart
 |Block
 |Platform

@@ -140,3 +140,14 @@ sureface
 surface_set_target_safe
 run_playlist
 funny_reset
+current_date_filename
+system_hotkeys
+emit_blood
+
+joy_deadzone
+joy_snap
+joy_compare
+
+joy_get_map
+change_weapon
+change_skin

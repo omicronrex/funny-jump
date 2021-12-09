@@ -4,11 +4,19 @@
 add_string("deaths","Deaths")
 add_string("time","Time")
 
+//volume check
+add_string("volcheck","Volume Check#")
+add_string("volcheck2"," to confirm")
+add_string("volcheck3","Use ")
+add_string("volcheck4"," and ")
+
 //ingame text
 add_string("warptohub","UP to return")
 add_string("pausemenu","PAUSE")
 add_string("presstosave"," to Save")
 add_string("signpost","Poggers")
+add_string("hitcount","Hits taken: ")
+add_string("screenshot","Screenshot saved")
 
 //menus
 add_string("menuback","Back")
@@ -31,10 +39,14 @@ add_string("vsynctestfail","vSync test failed!")
 add_string("vsynctestok","vSync OK!")
 
 //joystick ui
-add_string("joyfound","Joystick found:")
-add_string("joysfound"," joysticks found:")
-add_string("joyset1up","Set it up in the options")
-add_string("joyset2up","Set them up in the options")
+add_string("joyfound","New joystick found:")
+add_string("joysfound"," new joysticks found:")
+add_string("joyset1up","Go to Options to set it up")
+add_string("joyset2up","Go to Options to set them up")
+add_string("joyusekey","Please use your keyboard here")
+add_string("joypushtosel","Push buttons to select joystick")
+add_string("joytokey","Please disable JoyToKey and Steam Generic Controller support")
+add_string("joyskipkey"," to skip a button")
 
 //options menu
 add_string("optionsmenu","- Options -")
@@ -80,10 +92,11 @@ add_string("keyname2","Up" )
 add_string("keyname3","Down")
 add_string("keyname4","Jump")
 add_string("keyname5","Shoot")
-add_string("keyname6","Restart")
-add_string("keyname7","Skip")
-add_string("keyname8","Die")
-add_string("keyname9","Menu")
+add_string("keyname6","Pause")
+add_string("keyname7","Restart")
+add_string("keyname8","Skip")
+add_string("keyname9","Die")
 add_string("keyresetkeys","Reset Controls")
 add_string("keynewkey","Press new key...")
+add_string("resetconfirm","Confirm?")
 add_string("keykeysreset","Reset!")
