@@ -53,6 +53,18 @@ if (fading) {
     }
 }
 
+//close game
+if (keyboard_check_pressed(vk_f4) && keyboard_check(vk_alt)) {
+    event_game_end()
+}
+
+//fullscreen toggle
+if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_check_pressed(vk_f11) || (keyboard_check_pressed(vk_f4) && !keyboard_check(vk_alt))) {
+    settings("fullscreen",!settings("fullscreen"))
+    update_fullscreen()
+    input_clear()
+}
+
 if (is_ingame()) {
     //advance game time
     if (instance_exists(Player) && !instance_exists(TimerFreeze)) {
@@ -61,7 +73,11 @@ if (is_ingame()) {
     }
 
     update_caption_deathtime()
+}
 
+with (FunnyJump) if (go && !done) exit
+
+if (is_ingame()) {
     //pause
     if (pause_delay<=0) {
         if (global.key_pressed[key_menu]) {
@@ -75,6 +91,7 @@ if (is_ingame()) {
         pause_delay-=1
     }
 }
+
 
 //exit checks
 if (keyboard_check_pressed(vk_escape)) {
@@ -102,18 +119,6 @@ if (keyboard_check_pressed(vk_f2)) {
         instance_destroy_id(Player)
         room_goto(rmTitle)
     } else room_goto(rmTitle)
-}
-
-//close game
-if (keyboard_check_pressed(vk_f4) && keyboard_check(vk_alt)) {
-    event_game_end()
-}
-
-//fullscreen toggle
-if ((keyboard_check(vk_alt) && keyboard_check_pressed(vk_return)) || keyboard_check_pressed(vk_f11) || (keyboard_check_pressed(vk_f4) && !keyboard_check(vk_alt))) {
-    settings("fullscreen",!settings("fullscreen"))
-    update_fullscreen()
-    input_clear()
 }
 
 //die key
