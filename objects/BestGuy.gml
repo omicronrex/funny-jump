@@ -26,11 +26,11 @@ repeat (3) {
     image_xscale=ds_list_find_value(FunnyJump.list_w,position)
 
     if (ds_list_find_value(FunnyJump.list_j,position)) {
-        if (!place_meeting(floorto(x,32)+16,floorto(y,32)+32,Block)) {
-            with (instance_nearest(x,y,Block)) {
+        with (instance_nearest(x-16,y+16,Block)) {
+            if (distance_to_object(SavePointHard)>=64) {
                 instance_create(x,y-32,SavePointHard)
             }
-        } else instance_create(floorto(x,32),floorto(y,32),SavePointHard)
+        }
     }
 
     move_player(x,y-0.4,0)
