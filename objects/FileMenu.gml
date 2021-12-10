@@ -121,7 +121,6 @@ draw_set_color(0)
 draw_set_halign(1)
 draw_set_font(fntFileBig)
 draw_text(global.width/2,64,lang("filemenu"))
-draw_set_color($ffffff)
 
 
 for (i=0;i<3;i+=1) {

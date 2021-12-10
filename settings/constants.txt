@@ -16,4 +16,5 @@ lr_ignore=1
 lr_stop=2
 lr_left=3
 lr_right=4
+mil=1000000
 pog=999999999
