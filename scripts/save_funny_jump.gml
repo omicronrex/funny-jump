@@ -10,6 +10,6 @@ with (SavePoint) {
     ds_list_add(d,y)
     ds_list_add(d,object_index)
 }
-savedata("hasfunnyjump",true)
-savedata("funnyjump",ds_list_write(d))
+savedata(room_get_name(room)+"_hasfunnyjump",true)
+savedata(room_get_name(room)+"_funnyjump",ds_list_write(d))
 ds_list_destroy(d)

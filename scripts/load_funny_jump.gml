@@ -1,7 +1,7 @@
 instance_destroy_id(PlayerKiller)
-if (savedata("hasfunnyjump")) {
+if (savedata(room_get_name(room)+"_hasfunnyjump")) {
     var d;d=ds_list_create()
-    ds_list_read(d,savedata("funnyjump"))
+    ds_list_read(d,savedata(room_get_name(room)+"_funnyjump"))
     pos=1
     repeat (ds_list_find_value(d,0)) {
         instance_create(ds_list_find_value(d,pos),ds_list_find_value(d,pos+1),ds_list_find_value(d,pos+2))
@@ -21,6 +21,7 @@ if (savedata("hasfunnyjump")) {
 
     instance_create(0,0,BlockEffector)
     BlockEffector.visible=0
+    tile_layer_delete(1000)
 
     return 1
 }
