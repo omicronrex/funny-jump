@@ -6,5 +6,5 @@ global.savemysurf1=-1
 global.savemysurf2=-1
 global.savemysurf3=-1
 
-global.playlist=irandom(8)
+global.playlist=irandom(9)
 global.cursong=-1

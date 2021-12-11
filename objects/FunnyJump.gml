@@ -68,6 +68,7 @@ if (go && !done) {
 
     if (timer=200) {
         background_color=$40
+        tile_layer_delete(1000)
         instance_create(view_wview/2+view_xview,view_hview/2+view_yview,Supernova)
         with (PlayerKiller) {
             image_blend=0

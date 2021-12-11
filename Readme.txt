@@ -42,6 +42,7 @@
         - implemented some limits for save placement
         - fixed saves sometimes showing up on the wrong place
         - it's no longer possible to reset during level generation
+        - added a new music track, Wonderfull also by Sidewinder
 
 --------------------------------------------------------------------------------
 
@@ -59,5 +60,6 @@
         - Jasmine - Sidewinder
         - Just Like That - Sidewinder
         - She Said - Sidewinder
+        - Wonderfull - Sidewinder
 
 --------------------------------------------------------------------------------
