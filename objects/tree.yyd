@@ -234,3 +234,5 @@
 	|SongNamer
 	|SupernovaFader
 	|YuuutuBorder
+	|SaveLayout
+	|LoadLayout

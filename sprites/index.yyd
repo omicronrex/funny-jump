@@ -297,3 +297,5 @@ sprBlockCrush
 sprHitCount
 sprHPMode
 sprMusicNote
+sprSaver
+sprLoader

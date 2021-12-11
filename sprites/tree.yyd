@@ -222,3 +222,5 @@
 	|sprGrass
 	|sprRunes
 	|sprMusicNote
+	|sprSaver
+	|sprLoader
