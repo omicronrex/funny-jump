@@ -29,7 +29,7 @@ action_id=603
 applies_to=self
 */
 texture_set_interpolation(1)
-draw_sprite_ext(sprite_index,0,x,y,image_xscale,image_yscale,angle,$ffffff,1)
-draw_sprite_ext(sprite_index,0,x,y,image_xscale*0.8,image_yscale*0.8,angle*0.7,$ffffff,0.5)
-draw_sprite_ext(sprite_index,0,x,y,image_xscale*0.6,image_yscale*0.6,angle*0.52,$ffffff,0.25)
+draw_sprite_ext(sprite_index,0,view_wview/2+view_xview,view_hview/2+view_yview,image_xscale,image_yscale,angle,$ffffff,1)
+draw_sprite_ext(sprite_index,0,view_wview/2+view_xview,view_hview/2+view_yview,image_xscale*0.8,image_yscale*0.8,angle*0.7,$ffffff,0.5)
+draw_sprite_ext(sprite_index,0,view_wview/2+view_xview,view_hview/2+view_yview,image_xscale*0.6,image_yscale*0.6,angle*0.52,$ffffff,0.25)
 texture_reset_interpolation()

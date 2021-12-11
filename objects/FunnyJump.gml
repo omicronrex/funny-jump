@@ -50,7 +50,7 @@ if (go && !done) {
 
     if (timer==0) {
         sound_play("thx")
-        for (u=32;u<800-32;u+=32) for (v=32;v<608-32;v+=32) {
+        for (u=32;u<room_width-32;u+=32) for (v=32;v<room_height-32;v+=32) {
             if (!place_meeting(u,v,Block) && !place_meeting(u,v,FunnyWarp))
                 instance_create(u,v,PerfectCell)
         }
@@ -68,7 +68,7 @@ if (go && !done) {
 
     if (timer=200) {
         background_color=$40
-        instance_create(400,304,Supernova)
+        instance_create(view_wview/2+view_xview,view_hview/2+view_yview,Supernova)
         with (PlayerKiller) {
             image_blend=0
         }
