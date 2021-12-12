@@ -1,4 +1,6 @@
 if (savedata(room_get_name(room)+"_hasfunnyjump")) {
+    with (PlayerKiller) if (object_index!=CrimsonCherry) instance_destroy()
+
     var d;d=ds_list_create()
     ds_list_read(d,savedata(room_get_name(room)+"_funnyjump"))
     pos=1
@@ -26,6 +28,7 @@ if (savedata(room_get_name(room)+"_hasfunnyjump")) {
     tile_layer_delete(1100)
 
     with (CrimsonCherry) sprite_index=sprCherryWhite
+    with (Platform) sprite_index=sprWhitePlat
 
     return 1
 }

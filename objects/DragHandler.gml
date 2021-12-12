@@ -17,7 +17,7 @@ count=file_drag_count()
 if (count) {
     for (i=0;i<count;i+=1) {
         fn=file_drag_name(i)
-        if (!funny_import(fn)) show_message("File "+filename_name(fn)+" was not recognized!")
+        if (!funny_import(fn)) show_message("File '"+filename_name(fn)+"' was not recognized!")
     }
     file_drag_clear()
 }

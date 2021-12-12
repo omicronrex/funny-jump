@@ -78,6 +78,7 @@ if (go && !done) {
         tile_layer_delete(1000)
         tile_layer_delete(1100)
         with (CrimsonCherry) sprite_index=sprCherryWhite
+        with (Platform) sprite_index=sprWhitePlat
         instance_create(view_wview/2+view_xview,view_hview/2+view_yview,Supernova)
         with (PlayerKiller) {
             image_blend=0
@@ -138,6 +139,9 @@ if (done) {
     with (PlayerKiller) {
         image_blend=make_color_hsv((((x+y)*20+t)/50) mod 255,150,200)
     }
+    with (Platform) {
+        image_blend=make_color_hsv((((x+y)*20+t)/50) mod 255,150,200)
+    }
     run_playlist()
 } else {
     SavePoint.notice=0
@@ -157,6 +161,7 @@ if (record) {
 }
 
 sound_stop("thx")
+global.music=""
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

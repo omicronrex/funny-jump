@@ -1,6 +1,6 @@
 var d;d=ds_list_create()
-ds_list_add(d,instance_number(PlayerKiller)+instance_number(SavePoint))
-with (PlayerKiller) {
+ds_list_add(d,instance_number(PlayerKiller)+instance_number(SavePoint)-instance_number(CrimsonCherry))
+with (PlayerKiller) if (object_index!=CrimsonCherry) {
     ds_list_add(d,x)
     ds_list_add(d,y)
     ds_list_add(d,object_index)

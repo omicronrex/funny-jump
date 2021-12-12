@@ -13,7 +13,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-funny_import()
+if (!funny_import()) show_message("File was not recognized!")
 #define Alarm_1
 /*"/*'/**//* YYD ACTION
 lib_id=1

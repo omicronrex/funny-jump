@@ -48,7 +48,7 @@ if (position=0) {
     with (PerfectCell) instance_destroy()
 
     with (SavePoint) {
-        with (PlayerKiller) {
+        with (PlayerKiller) if (object_index!=CrimsonCherry) {
             if (place_meeting(x,y,other.id)) {
                 instance_destroy()
             }
@@ -65,7 +65,7 @@ if (position=0) {
 #define Collision_PlayerKiller
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=203
-applies_to=other
-invert=0
+action_id=603
+applies_to=self
 */
+if (other.object_index!=CrimsonCherry) instance_destroy_id(other.id)
