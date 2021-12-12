@@ -3,7 +3,7 @@ with (Player) {
     if (global.debug_god) {
         if (!flashing) {
             flashing=room_speed
-            sound_play("sndBossHit")
+            sound_play("sndDeath")
             deathlist[1+deathlist[0]*2]=x
             deathlist[2+deathlist[0]*2]=y
             deathlist[0]+=1

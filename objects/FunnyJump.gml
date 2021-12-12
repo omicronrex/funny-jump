@@ -104,11 +104,11 @@ if (go && !done) {
         with (PlayerKiller) {
             image_blend=merge_color(0,make_color_hsv((((x+y)*20+t)/50) mod 255,150,200),a)
         }
+        with (Platform) {
+            image_blend=merge_color(0,make_color_hsv((((x+y)*20+t)/50) mod 255,150,200),a)
+        }
         a=merge_color(0,$ffffff,a)
         with (SavePoint) {
-            image_blend=a
-        }
-        with (Platform) {
             image_blend=a
         }
     }
