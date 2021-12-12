@@ -1,4 +1,4 @@
-    if (FunnyJump.go && !FunnyJump.done) exit
+with (FunnyJump) if (go && !done) exit
 with (Player) {
     if (global.debug_god) {
         if (!flashing) {

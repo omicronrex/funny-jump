@@ -39,6 +39,7 @@ djump=1
 ladder=false
 onPlatform=false
 ladderjump=false
+dot_hitbox=(room==rmStage4)
 hang=false
 
 oldslomo=-1
@@ -588,10 +589,12 @@ applies_to=self
 */
 ///killer detection
 //must be done after collision to ensure fairness
+var tmp;
 
-if (place_meeting(x,y,PlayerKiller)) {
-    kill_player()
-}
+tmp=mask_index
+if (dot_hitbox) mask_index=sprWhiteDot
+if (place_meeting(x,y,PlayerKiller)) kill_player()
+mask_index=tmp
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

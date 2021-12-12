@@ -224,6 +224,8 @@
 +funny jump
 	|FunnyJump
 	|BlockEffector
+	|LayoutDraw
+	|DragHandler
 	|FunnyWarp
 	|BestGuy
 	|Collider
@@ -236,3 +238,5 @@
 	|YuuutuBorder
 	|SaveLayout
 	|LoadLayout
+	|ClearLayout
+	|CrimsonCherry

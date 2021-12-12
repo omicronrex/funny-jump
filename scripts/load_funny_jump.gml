@@ -1,4 +1,3 @@
-instance_destroy_id(PlayerKiller)
 if (savedata(room_get_name(room)+"_hasfunnyjump")) {
     var d;d=ds_list_create()
     ds_list_read(d,savedata(room_get_name(room)+"_funnyjump"))
@@ -18,10 +17,15 @@ if (savedata(room_get_name(room)+"_hasfunnyjump")) {
     with (FunnyWarp) {
         instance_change(Warp,0)
     }
+    BreakBlock.tile=-1
+    instance_destroy_id(BreakBlock)
 
     instance_create(0,0,BlockEffector)
     BlockEffector.visible=0
     tile_layer_delete(1000)
+    tile_layer_delete(1100)
+
+    with (CrimsonCherry) sprite_index=sprCherryWhite
 
     return 1
 }

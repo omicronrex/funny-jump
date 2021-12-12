@@ -50,25 +50,34 @@ if (go && !done) {
 
     if (timer==0) {
         sound_play("thx")
+        BreakBlock.tile=-1
+        instance_destroy_id(BreakBlock)
+        instance_deactivate_object(Platform)
         for (u=32;u<room_width-32;u+=32) for (v=32;v<room_height-32;v+=32) {
             if (!place_meeting(u,v,Block) && !place_meeting(u,v,FunnyWarp))
                 instance_create(u,v,PerfectCell)
         }
+        instance_activate_object(Platform)
     }
     if (timer<=200) {
         a=timer/200
         with (PerfectCell) {
             image_alpha=a
         }
-        with (Block) {
+        with (Block) if (object_index=Block) {
             image_alpha=a
         }
         Player.image_blend=merge_color($ffffff,0,timer/200)
+        with (Platform) {
+            image_blend=Player.image_blend
+        }
     }
 
     if (timer=200) {
         background_color=$40
         tile_layer_delete(1000)
+        tile_layer_delete(1100)
+        with (CrimsonCherry) sprite_index=sprCherryWhite
         instance_create(view_wview/2+view_xview,view_hview/2+view_yview,Supernova)
         with (PlayerKiller) {
             image_blend=0
@@ -96,6 +105,9 @@ if (go && !done) {
         }
         a=merge_color(0,$ffffff,a)
         with (SavePoint) {
+            image_blend=a
+        }
+        with (Platform) {
             image_blend=a
         }
     }
@@ -143,6 +155,8 @@ if (record) {
     ds_list_destroy(list_i)
     ds_list_destroy(list_w)
 }
+
+sound_stop("thx")
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

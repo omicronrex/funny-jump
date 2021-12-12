@@ -17,21 +17,24 @@
   -------------
   
         - roaming97
+        - Natsu
 
 --------------------------------------------------------------------------------
 
   PATCH NOTES
   -----------
+  Version 1.1
   
   The game shipped in a rather unfinished state due to my exhaustion,
   so here's a small update to fix a few problems and add some things
   that were suggested to me after its release:
   
+        - added four new layouts, one of which uses white dot hitbox mode
         - added the ability to load and save screens, so you can share them
         - the music was recompressed, greatly reducing filesize
         - fixed a memory leak that caused a crash after a few hundred deaths
         - fixed an invincibility bug
-        - small optimizations have been found
+        - small optimizations have been made
         - the game no longer always plays Keisha first
         - fixed some text turning yellow on occasion
         - implemented some limits for save placement

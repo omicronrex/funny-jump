@@ -50,7 +50,8 @@ if (argument0=="step") {
 
     sprite_angle=inch(sprite_angle,angle,9)
 
-    image_blend=$ffffff
+    if (dot_hitbox) image_blend=$808080
+    else image_blend=$ffffff
 }
 
 if (argument0=="draw") {
@@ -58,5 +59,9 @@ if (argument0=="draw") {
 
     if (bow) {
         draw_sprite_ext(sprBow,0,floor(bowx),floor(bowy+abs(lengthdir_y(2,drawangle))*vflip+(vflip==-1)),facing,vflip,drawangle,image_blend,image_alpha)
+    }
+
+    if (dot_hitbox) {
+        draw_sprite(sprWhiteDot,0,floor(drawx),floor(drawy))
     }
 }

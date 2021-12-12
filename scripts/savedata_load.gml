@@ -46,6 +46,7 @@ if (savedata("saved")) {
 
     //gimmicks
     i.slomo=savedata("slomo")
+    i.dot_hitbox=savedata("whitedot")
     i.maxjumps=savedata("numjumps")
 
     difficulty=savedata("diff")

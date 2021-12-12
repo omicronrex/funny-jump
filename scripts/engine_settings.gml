@@ -91,7 +91,7 @@
     //pause on death (or after fading if fading is used)
     global.gameover_music_pause=false
     //0 for clean break sound effect, 1 for yuuutu engine, 2 for yosniper
-    global.break_sound_effect=0
+    global.break_sound_effect=1
 
 
 //extra stuff

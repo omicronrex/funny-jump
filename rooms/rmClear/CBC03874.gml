@@ -1,4 +1,4 @@
 font=fntFileSmall
 halign=1
 valign=1
-text="Play More"
+text="New Features!"

@@ -52,6 +52,7 @@ if (difficulty!=3 || argument0) with (Player) {
 
     //gimmicks
     savedata("slomo",slomo)
+    savedata("whitedot",dot_hitbox)
     savedata("numjumps",maxjumps)
 
     save_persistent_objects()

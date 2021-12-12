@@ -1,24 +1,43 @@
-var r,s,tmp,b,size;
-/*
-r=argument0
-tmp=temp_directory+"\temp.png"
+var r,s,tmp,b,size,ext;
 
-if (savedata(room_get_name(r)+"_hasfunnyjump")) {
-    fn=get_save_filename("Funny Jump level|*.fj.png","jump.fj.png")
-    if (fn!="") {
-        s=surface_engage(-1,192,146)
+if (argument_count) fn=argument[0]
+else fn=get_open_filename("Funny Jump level|*.fj.png","")
 
-        draw_background(bgMegaman,0,0)
-        surface_save(s,tmp)
-        surface_free(s)
+if (file_exists(fn)) {
+    b=buffer_create()
+    buffer_load(b,fn)
 
-        b=buffer_create()
-        buffer_load(b,tmp)
-        size=buffer_get_size(b)
-        buffer_write_string(b,savedata(room_get_name(r)+"_funnyjump"))
-        buffer_write_u32(b,size)
+    size=buffer_get_size(b)
+    buffer_set_pos(b,size-4)
+    if (buffer_read_u32(b)!=1234321) {
+        anchor=-1
+    } else {
+        buffer_set_pos(b,size-8)
+        anchor=buffer_read_u32(b)
+    }
 
-        buffer_save(b,filename_change_ext(fn,".fj.png"))
+    if (anchor>0 && anchor<size) {
+        b2=buffer_create()
+        buffer_copy_part(b2,b,anchor,size-8-anchor)
         buffer_destroy(b)
+
+        buffer_set_pos(b2,0)
+        buffer_inflate(b2)
+        buffer_set_pos(b2,0)
+        r=buffer_read_u16(b2)
+        data=buffer_read_string(b2)
+        buffer_destroy(b2)
+
+        savedata(room_get_name(r)+"_funnyjump",data)
+        savedata(room_get_name(r)+"_hasfunnyjump",1)
+
+        show_message("Stage "+string_digits(room_get_name(r))+" was loaded.")
+
+        with (SaveLayout) if (type=r) y=ystart
+        with (ClearLayout) if (type=r) y=ystart
+        return 1
+    } else {
+        buffer_destroy(b)
+        return 0
     }
 }

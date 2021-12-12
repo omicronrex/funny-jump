@@ -43,7 +43,7 @@ if (!surface_exists(block1)) {
     block1=surface_engage(block1,room_width,room_height)
     draw_clear($ffffff)
     draw_set_blend_mode(bm_subtract)
-        with (Block) {
+        with (Block) if (object_index==Block) {
             draw_sprite(sprBrownBlock,1,x,y)
         }
     draw_set_blend_mode(0)
@@ -53,7 +53,7 @@ if (!surface_exists(block2)) {
     block2=surface_engage(block2,room_width,room_height)
     draw_clear($ffffff)
     draw_set_blend_mode(bm_subtract)
-        with (Block) if (top) {
+        with (Block) if (object_index==Block) if (top) {
             draw_sprite(sprGrass,1,x,y)
         }
     draw_set_blend_mode(0)

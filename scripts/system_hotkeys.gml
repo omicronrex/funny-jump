@@ -42,7 +42,10 @@ if (yes) {
             } else {
                 savedata_write()
                 instance_destroy_id(Player)
-                room_goto(rmTitle)
+                if (savedata("clear")) {
+                    if (room!=rmHub) room_goto(rmHub)
+                    else room_goto(rmTitle)
+                } else room_goto(rmTitle)
             }
         } else {
             if (room=rmMenu) room_goto(rmTitle)
